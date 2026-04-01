@@ -1,0 +1,45 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    color: #0056b3;
+}
+
+p {
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+.nav {
+    background-color: #007bff;
+    padding: 10px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.nav a:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
