@@ -29,22 +29,23 @@
         margin-bottom: 20px;
     }
 
-    h1 {
-        margin-bottom: 10px;
-        color: #333;
-    }
-
     p {
         font-size: 16px;
-        color: #222222;
+        color: #555;
         line-height: 1.6;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
 
-    /* FORM STYLING */
+    /* FORM CONTAINER (NEW BLUE BOX) */
+    .form-wrapper {
+        background-color: #1062ba; /* soft light blue */
+        padding: 25px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
     form {
         text-align: left;
-        margin-top: 20px;
     }
 
     .form-row {
@@ -64,16 +65,18 @@
         border-radius: 6px;
         font-size: 14px;
         box-sizing: border-box;
+        background: #fff;
     }
 
     textarea {
         resize: vertical;
     }
 
+    /* LIGHTER BUTTON */
     button {
         width: 100%;
         padding: 14px;
-        background-color: #1062ba;
+        background-color: #fb6b0b; 
         color: white;
         border: none;
         border-radius: 6px;
@@ -83,7 +86,7 @@
     }
 
     button:hover {
-        background-color: #0d4e95;
+        background-color: #959595;
     }
 
     footer {
@@ -93,7 +96,7 @@
         text-align: center;
     }
 
-    /* MOBILE FRIENDLY */
+    /* MOBILE */
     @media (max-width: 600px) {
         .form-row {
             flex-direction: column;
@@ -115,19 +118,21 @@
 
     <p><strong>Request a quote or ask a question below:</strong></p>
 
-    <form target="_blank" action="https://formsubmit.co/info@3dsouvenirs.com" method="POST">
-        
-        <div class="form-row">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-        </div>
+    <div class="form-wrapper">
+        <form target="_blank" action="https://formsubmit.co/info@3dsouvenirs.com" method="POST">
+            
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
 
-        <div style="margin-bottom: 15px;">
-            <textarea name="message" rows="6" placeholder="Your Question" required></textarea>
-        </div>
+            <div style="margin-bottom: 15px;">
+                <textarea name="message" rows="6" placeholder="Your Question" required></textarea>
+            </div>
 
-        <button type="submit">Submit Form</button>
-    </form>
+            <button type="submit">Submit Form</button>
+        </form>
+    </div>
 
     <footer>
         © 2026 3DSouvenirs.com
