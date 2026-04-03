@@ -1,67 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3DSouvenirs.com</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1062ba;
-            text-align: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3DSouvenirs.com</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1062ba;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 60px auto;
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    /* FORM STYLING */
+    form {
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .form-row input {
+        flex: 1;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        background-color: #1062ba;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    button:hover {
+        background-color: #0d4e95;
+    }
+
+    footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #777;
+        text-align: center;
+    }
+
+    /* MOBILE FRIENDLY */
+    @media (max-width: 600px) {
+        .form-row {
+            flex-direction: column;
         }
-        .container {
-            max-width: 800px;
-            margin: 60px auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            margin-top: calc(var(--base-size-4) + 1px);
-            font-size: 16px;
-            color: var(--fgColor-muted);
-            line-height: 1.6;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
-    </style>
+    }
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <img src="3DSouvenirs.jpg" alt="3D Souvenirs">
-        <p>
-            <strong>3DSouvenirs.com</strong> creates eye-catching 3D lenticular postcards, fridge magnets,
-            and other unique products designed specifically for gift shops and attractions.<br><br>
-            Fill out the form below for quotes or questions.
-  <form target="_blank" action="https://formsubmit.co/info@3dsouvenirs.com" method="POST">
-    <div class="form-group">
-      <div class="form-row">
-        <div class="col">
-          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+
+<div class="container">
+    <img src="3DSouvenirs.jpg" alt="3D Souvenirs">
+
+    <p>
+        <strong>3DSouvenirs.com</strong> creates eye-catching 3D lenticular postcards,
+        fridge magnets, and other unique products designed specifically for
+        gift shops and attractions.
+    </p>
+
+    <p><strong>Request a quote or ask a question below:</strong></p>
+
+    <form target="_blank" action="https://formsubmit.co/info@3dsouvenirs.com" method="POST">
+        
+        <div class="form-row">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
         </div>
-        <div class="col">
-          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+
+        <div style="margin-bottom: 15px;">
+            <textarea name="message" rows="6" placeholder="Your Question" required></textarea>
         </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <textarea placeholder="Your Question" class="form-control" name="message" rows="10" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
-  </form>
-            <br><br>
-            © 2026 3DSouvenirs.com
-        </p>
-    </div>
+
+        <button type="submit">Submit Form</button>
+    </form>
+
+    <footer>
+        © 2026 3DSouvenirs.com
+    </footer>
+</div>
+
 </body>
 </html>
