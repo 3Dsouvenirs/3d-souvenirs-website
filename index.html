@@ -95,6 +95,26 @@
         color: #777;
         text-align: center;
     }
+    .bear-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.bear-gallery img {
+    width: 48%;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .bear-gallery img {
+        width: 100%;
+    }
+}
 
     /* MOBILE */
     @media (max-width: 600px) {
@@ -114,7 +134,10 @@
         tailored for gift shops and attractions. We come directly to your location to capture stunning, high-resolution 3D images turning 
         your best views into memorable products your customers will want to take home.
     </p>
-    <img src="3D-Life%20Is%20Better.gif" alt="3D Magnet Sample">
+    <div class="bear-gallery">
+    <img src="3D-Life%20Is%20Better.gif" alt="Bear Magnet Sample 1">
+    <img src="3D-DianasBaths.gif" alt="Diana's Baths Magnet Sample 2">
+</div>
 </br>
     <p><strong>Request a quote or ask questions below:</strong></p>
 
