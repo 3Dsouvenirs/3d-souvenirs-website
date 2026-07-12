@@ -105,74 +105,47 @@
     <div class="container">
         <h1>3D Souvenirs - Gallery Samples for the Auto Road</h1>
         
-        <div class="gallery">
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="raccoon_sticker.gif" alt="raccoon sticker">
-                </div>
-                <div class="gallery-item-title">
-                    <a href="raccoon_sticker.gif" download>raccoon_sticker.gif</a>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="usgc_sticker.gif" alt="usgs sticker">
-                </div>
-                <div class="gallery-item-title">
-                    <a href="usgc_sticker.gif" download>usgc_sticker.gif</a>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="bear_sticker.gif" alt="bear sticker">
-                </div>
-                <div class="gallery-item-title">
-                    <a href="bear_sticker.gif" download>bear_sticker.gif</a>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="blueorange_sticker.gif" alt="blue orange sticker">
-                </div>
-                <div class="gallery-item-title">
-                    <a href="blueorange_sticker.gif" download>blueorange_sticker.gif</a>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="carbear_sticker.gif" alt="Car Bear Sticker">
-                </div>
-                <div class="gallery-item-title">
-                    <a href="carbear_sticker.gif" download>carbear_sticker.gif</a>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="plaid_stickers.gif" alt="plaid stickers">
-                </div>
-                <div class="gallery-item-title">
-                    <a href="plaid_stickers.gif" download>plaid_stickers.gif</a>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="roundfox_sticker.gif" alt="Round Fox Sticker">
-                </div>
-                <div class="gallery-item-title">
-                    <a href="roundfox_sticker.gif" download>roundfox_sticker.gif</a>
-                </div>
-            </div>
+        <div class="gallery" id="gallery">
+            <!-- Gallery items will be generated here -->
         </div>
 
         <footer>
             <p>&copy; 2026 3D Souvenirs, LLC - Eye-catching lenticular products</p>
         </footer>
     </div>
+
+    <script>
+        // List of all GIF files in the samples directory
+        const gifFiles = [
+            'raccoon_sticker.gif.gif',
+            'usgs_ticker.gif.gif',
+            'bear_sticker.gif.gif',
+            'blueorange_sticker.gif.gif',
+            'carbear_sticker.gif.gif',
+            'plaid_stickers.gif.gif',
+            'roundfox_sticker.gif.gif'
+        ];
+
+        // Generate gallery items dynamically
+        const gallery = document.getElementById('gallery');
+        
+        gifFiles.forEach(gifFile => {
+            const fileName = gifFile.replace('.gif.gif', '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            const altText = fileName.toLowerCase();
+            
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            galleryItem.innerHTML = `
+                <div class="image-container">
+                    <img src="${gifFile}" alt="${altText}">
+                </div>
+                <div class="gallery-item-title">
+                    <a href="${gifFile}" download>${gifFile}</a>
+                </div>
+            `;
+            
+            gallery.appendChild(galleryItem);
+        });
+    </script>
 </body>
 </html>
