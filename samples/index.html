@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Souvenirs - Samples Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-title {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .gallery-item-title a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .gallery-item-title a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>3D Souvenirs - Gallery Samples</h1>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="Raccoon_Sticker.gif" alt="Raccoon Sticker">
+                <div class="gallery-item-title">
+                    <a href="Raccoon_Sticker.gif" download>Raccoon_Sticker.gif</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="USGS_Sticker.gif" alt="USGS Sticker">
+                <div class="gallery-item-title">
+                    <a href="USGS_Sticker.gif" download>USGS_Sticker.gif</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="bear_sticker.gif" alt="Bear Sticker">
+                <div class="gallery-item-title">
+                    <a href="bear_sticker.gif" download>bear_sticker.gif</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="blueorange_Sticker.gif" alt="Blue Orange Sticker">
+                <div class="gallery-item-title">
+                    <a href="blueorange_Sticker.gif" download>blueorange_Sticker.gif</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="carbear_sticker.gif" alt="Car Bear Sticker">
+                <div class="gallery-item-title">
+                    <a href="carbear_sticker.gif" download>carbear_sticker.gif</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="plaid_stickers.gif" alt="Plaid Stickers">
+                <div class="gallery-item-title">
+                    <a href="plaid_stickers.gif" download>plaid_stickers.gif</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 3D Souvenirs, LLC - Eye-catching lenticular products</p>
+        </footer>
+    </div>
+</body>
+</html>
