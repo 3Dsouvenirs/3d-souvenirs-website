@@ -44,6 +44,8 @@
             overflow: hidden;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .gallery-item:hover {
@@ -51,10 +53,22 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
 
-        .gallery-item img {
+        .image-container {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            padding: 15px;
+            min-height: 400px;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
             display: block;
         }
 
@@ -64,6 +78,7 @@
             font-weight: bold;
             color: #333;
             background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
         }
 
         .gallery-item-title a {
@@ -92,42 +107,54 @@
         
         <div class="gallery">
             <div class="gallery-item">
-                <img src="Raccoon_Sticker.gif" alt="Raccoon Sticker">
+                <div class="image-container">
+                    <img src="Raccoon_Sticker.gif" alt="Raccoon Sticker">
+                </div>
                 <div class="gallery-item-title">
                     <a href="Raccoon_Sticker.gif" download>Raccoon_Sticker.gif</a>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="USGS_Sticker.gif" alt="USGS Sticker">
+                <div class="image-container">
+                    <img src="USGS_Sticker.gif" alt="USGS Sticker">
+                </div>
                 <div class="gallery-item-title">
                     <a href="USGS_Sticker.gif" download>USGS_Sticker.gif</a>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="bear_sticker.gif" alt="Bear Sticker">
+                <div class="image-container">
+                    <img src="bear_sticker.gif" alt="Bear Sticker">
+                </div>
                 <div class="gallery-item-title">
                     <a href="bear_sticker.gif" download>bear_sticker.gif</a>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="blueorange_Sticker.gif" alt="Blue Orange Sticker">
+                <div class="image-container">
+                    <img src="blueorange_Sticker.gif" alt="Blue Orange Sticker">
+                </div>
                 <div class="gallery-item-title">
                     <a href="blueorange_Sticker.gif" download>blueorange_Sticker.gif</a>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="carbear_sticker.gif" alt="Car Bear Sticker">
+                <div class="image-container">
+                    <img src="carbear_sticker.gif" alt="Car Bear Sticker">
+                </div>
                 <div class="gallery-item-title">
                     <a href="carbear_sticker.gif" download>carbear_sticker.gif</a>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="plaid_stickers.gif" alt="Plaid Stickers">
+                <div class="image-container">
+                    <img src="plaid_stickers.gif" alt="Plaid Stickers">
+                </div>
                 <div class="gallery-item-title">
                     <a href="plaid_stickers.gif" download>plaid_stickers.gif</a>
                 </div>
