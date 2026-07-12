@@ -123,14 +123,16 @@
             'blueorange_sticker.gif.gif',
             'carbear_sticker.gif.gif',
             'plaid_stickers.gif.gif',
-            'roundfox_sticker.gif.gif'
+            'roundfox_sticker.gif.gif',
+            'fishingbear_sticker.gif'
         ];
 
         // Generate gallery items dynamically
         const gallery = document.getElementById('gallery');
         
         gifFiles.forEach(gifFile => {
-            const fileName = gifFile.replace('.gif.gif', '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            // strip any repeated .gif extensions and create readable title
+            const fileName = gifFile.replace(/(\.gif)+$/i, '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
             const altText = fileName.toLowerCase();
             
             const galleryItem = document.createElement('div');
