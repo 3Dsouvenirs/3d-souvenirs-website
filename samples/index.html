@@ -41,6 +41,22 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
+        .loading {
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .error {
+            text-align: center;
+            color: #ff6b6b;
+            font-size: 1.1em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -116,7 +132,7 @@
         <h1>3D Souvenirs - 3" Sticker Designs</h1>
         
         <div class="gallery" id="gallery">
-            <!-- Gallery items will be generated here -->
+            <div class="loading">Loading gallery...</div>
         </div>
 
         <footer>
@@ -125,40 +141,65 @@
     </div>
 
     <script>
-        // List of all GIF files in the samples directory
-        const gifFiles = [
-            'bear_sticker.gif',
-            'blueorange_sticker.gif',
-            'carbear_sticker.gif',
-            'feedthebear_sticker.gif',
-            'fishingbear_sticker.gif',
-            'plaid_stickers.gif',
-            'raccoon_sticker.gif',
-            'roundfox_sticker.gif',
-            'usgs_ticker.gif'
-        ];
-
-        // Generate gallery items dynamically
-        const gallery = document.getElementById('gallery');
+        // Fetch all GIF files from the samples directory using GitHub API
+        async function loadGallery() {
+            const gallery = document.getElementById('gallery');
+            
+            try {
+                // Get the current page's directory via GitHub API
+                const response = await fetch('https://api.github.com/repos/3Dsouvenirs/3d-souvenirs-website/contents/samples');
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch directory contents: ${response.status}`);
+                }
+                
+                const files = await response.json();
+                
+                // Filter for .gif files only
+                const gifFiles = files
+                    .filter(file => file.name.toLowerCase().endsWith('.gif'))
+                    .map(file => file.name)
+                    .sort();
+                
+                if (gifFiles.length === 0) {
+                    gallery.innerHTML = '<div class="error">No GIF files found in the samples directory.</div>';
+                    return;
+                }
+                
+                // Clear the loading message
+                gallery.innerHTML = '';
+                
+                // Generate gallery items for each GIF
+                gifFiles.forEach(gifFile => {
+                    // Create readable title from filename
+                    const fileName = gifFile
+                        .replace(/(\.gif)+$/i, '')
+                        .replace(/_/g, ' ')
+                        .replace(/\b\w/g, c => c.toUpperCase());
+                    const altText = fileName.toLowerCase();
+                    
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    galleryItem.innerHTML = `
+                        <div class="image-container">
+                            <img src="${gifFile}" alt="${altText}" loading="lazy">
+                        </div>
+                        <div class="gallery-item-title">
+                            <a href="${gifFile}" download>${gifFile}</a>
+                        </div>
+                    `;
+                    
+                    gallery.appendChild(galleryItem);
+                });
+                
+            } catch (error) {
+                console.error('Error loading gallery:', error);
+                gallery.innerHTML = `<div class="error">Error loading gallery: ${error.message}</div>`;
+            }
+        }
         
-        gifFiles.forEach(gifFile => {
-            // strip any repeated .gif extensions and create readable title
-            const fileName = gifFile.replace(/(\.gif)+$/i, '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-            const altText = fileName.toLowerCase();
-            
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'gallery-item';
-            galleryItem.innerHTML = `
-                <div class="image-container">
-                    <img src="${gifFile}" alt="${altText}">
-                </div>
-                <div class="gallery-item-title">
-                    <a href="${gifFile}" download>${gifFile}</a>
-                </div>
-            `;
-            
-            gallery.appendChild(galleryItem);
-        });
+        // Load gallery when page is ready
+        document.addEventListener('DOMContentLoaded', loadGallery);
     </script>
 </body>
 </html>
