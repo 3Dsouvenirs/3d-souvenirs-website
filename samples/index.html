@@ -1,527 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Souvenirs - Samples Gallery</title>
 
-    <title>3D Souvenirs - Samples Gallery</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2M84R3ZYTQ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date());
+gtag("config", "G-2M84R3ZYTQ");
+</script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2M84R3ZYTQ"></script>
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'G-2M84R3ZYTQ');
-    </script>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #1062ba;
-    min-height: 100vh;
-    padding: 40px 20px;
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+body{
+    min-height:100vh;
+    padding:40px 20px;
+    background:#1062ba;
+    font-family:Arial,sans-serif;
+}
 
-        .page-header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+.container{
+    max-width:1200px;
+    margin:auto;
+}
 
-        .page-title {
-            color: #ffffff;
-            margin-bottom: 15px;
-            font-size: 2.7em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+header,
+footer,
+.section-title,
+.bottom-home{
+    text-align:center;
+}
 
-        .page-description {
-            max-width: 800px;
-            margin: 0 auto 25px;
-            color: #ffffff;
-            font-size: 17px;
-            line-height: 1.6;
-        }
+header{
+    margin-bottom:35px;
+}
 
-        h1.section-title {
-            text-align: center;
-            color: #ffffff;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+.page-title,
+.section-title{
+    color:#fff;
+    text-shadow:2px 2px 4px rgba(0,0,0,.3);
+}
 
-        h2 {
-            color: #ffffff;
-            margin-top: 50px;
-            margin-bottom: 30px;
-            font-size: 1.8em;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+.page-title{
+    margin-bottom:15px;
+    font-size:2.7rem;
+}
 
-        /* HOME BUTTON */
-        .home-button {
-            display: inline-block;
-            padding: 14px 30px;
-            background-color: #fb6b0b;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 7px;
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
-            transition:
-                background-color 0.2s ease,
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-        }
+.page-description{
+    max-width:800px;
+    margin:0 auto 18px;
+    color:#fff;
+    font-size:17px;
+    line-height:1.6;
+}
 
-        .home-button:hover {
-            background-color: #1062ba;
-            transform: translateY(-2px);
-            box-shadow: 0 7px 16px rgba(0, 0, 0, 0.3);
-        }
+.ordering-note{
+    max-width:760px;
+    margin:0 auto 25px;
+    padding:12px 20px;
+    border-radius:7px;
+    background:rgba(255,255,255,.15);
+    color:#fff;
+    line-height:1.5;
+}
 
-        .bottom-home {
-            text-align: center;
-            margin-top: 50px;
-        }
+.home-button{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:7px;
+    background:#fb6b0b;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    text-decoration:none;
+    box-shadow:0 5px 12px rgba(0,0,0,.2);
+    transition:.2s;
+}
 
-        /* GALLERY */
-        .gallery {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
+.home-button:hover{
+    background:#084d94;
+    transform:translateY(-2px);
+}
 
-        .gallery-item {
-            background-color: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
+.section-title{
+    margin:45px 0 25px;
+    font-size:2rem;
+}
 
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-        }
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    padding:20px;
+}
 
-        .image-container {
-            width: 100%;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f8f9fa;
-            padding: 15px;
-            min-height: 400px;
-        }
+.gallery-item{
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    border-radius:10px;
+    background:#fff;
+    box-shadow:0 8px 16px rgba(0,0,0,.2);
+    transition:.3s;
+}
 
-        .gallery-item img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            display: block;
-        }
+.gallery-item:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 24px rgba(0,0,0,.3);
+}
 
-        footer {
-            text-align: center;
-            color: #ffffff;
-            margin-top: 40px;
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
+.image-container{
+    display:flex;
+    flex:1;
+    min-height:400px;
+    padding:15px;
+    align-items:center;
+    justify-content:center;
+    background:#f8f9fa;
+}
 
-        footer p {
-            line-height: 1.5;
-        }
+.image-container img{
+    display:block;
+    max-width:100%;
+    max-height:100%;
+    width:auto;
+    height:auto;
+}
 
-        /* MOBILE */
-        @media (max-width: 600px) {
-            body {
-                padding: 25px 10px;
-            }
+.product-info{
+    padding:15px;
+    text-align:center;
+    border-top:1px solid #e5e5e5;
+}
 
-            .page-title {
-                font-size: 2em;
-            }
+.product-code{
+    margin-bottom:5px;
+    color:#1062ba;
+    font-size:22px;
+    font-weight:bold;
+}
 
-            h1.section-title {
-                font-size: 2em;
-            }
+.product-name{
+    color:#555;
+    font-size:15px;
+}
 
-            .gallery {
-                grid-template-columns: 1fr;
-                padding: 10px;
-                gap: 22px;
-            }
+.bottom-home{
+    margin-top:50px;
+}
 
-            .image-container {
-                min-height: 300px;
-            }
+footer{
+    margin-top:40px;
+    color:#fff;
+    font-size:14px;
+    opacity:.9;
+}
 
-            .home-button {
-                display: block;
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-        }
-    </style>
+@media(max-width:600px){
+    body{
+        padding:25px 10px;
+    }
+
+    .page-title{
+        font-size:2rem;
+    }
+
+    .section-title{
+        font-size:1.7rem;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+        gap:22px;
+        padding:10px;
+    }
+
+    .image-container{
+        min-height:300px;
+    }
+
+    .home-button{
+        display:block;
+        width:100%;
+        max-width:300px;
+        margin:auto;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <header class="page-header">
+<header>
+    <h1 class="page-title">3D Souvenirs Sample Gallery</h1>
 
-            <h1 class="page-title">
-                3D Souvenirs Sample Gallery
-            </h1>
+    <p class="page-description">
+        Explore examples of our custom 3D lenticular flip stickers and
+        fridge magnets designed for gift shops, attractions, parks,
+        museums and tourist destinations.
+    </p>
 
-            <p class="page-description">
-                Explore examples of our custom 3D lenticular
-                flip stickers and fridge magnets designed for
-                gift shops, attractions, parks, museums, and
-                tourist destinations.
-            </p>
+    <p class="ordering-note">
+        Interested in a design? Include the product code shown beneath
+        the image when contacting us.
+    </p>
 
-            <a href="/" class="home-button">
-                &larr; Back to Home
-            </a>
+    <a href="/" class="home-button">&larr; Back to Home</a>
+</header>
 
-        </header>
+<h2 class="section-title">3&quot; Flip Style Sticker Designs</h2>
+<div class="gallery" id="stickers"></div>
 
-        <h1 class="section-title">
-            3&quot; Flip Style Sticker Designs
-        </h1>
+<h2 class="section-title">
+    3.75&quot; × 3&quot; Fridge 3D &amp; Flip Style Magnet Designs
+</h2>
+<div class="gallery" id="magnets"></div>
 
-        <div class="gallery" id="gallery-stickers">
+<div class="bottom-home">
+    <a href="/" class="home-button">&larr; Back to Home</a>
+</div>
 
+<footer>
+    &copy; 2026 3D Souvenirs, LLC — Eye-catching lenticular products
+</footer>
+
+</div>
+
+<script>
+const imagePath =
+"https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/";
+
+const stickers = [
+    ["FS-101","Bear Flip Sticker","bear_sticker.gif"],
+    ["FS-102","Bear Mouth Flip Sticker","bearmouth_sticker.gif"],
+    ["FS-103","Blue and Orange Flip Sticker","blueorange_sticker.gif"],
+    ["FS-104","Car Bear Flip Sticker","carbear_sticker.gif"],
+    ["FS-105","Feed the Bear Flip Sticker","feedthebear_sticker.gif"],
+    ["FS-106","Fishing Bear Flip Sticker","fishingbear_sticker.gif"],
+    ["FS-107","Foxes Flip Sticker","foxes_stickers.gif"],
+    ["FS-108","Owl Flip Sticker","owl_sticker.gif"],
+    ["FS-109","Plaid Wildlife Flip Sticker","plaid_stickers.gif"],
+    ["FS-110","Raccoon Flip Sticker","raccoon_sticker.gif"],
+    ["FS-111","Round Fox Flip Sticker","roundfox_sticker.gif"],
+    ["FS-112","Say Cheese Flip Sticker","say_cheese_sticker.gif"],
+    ["FS-113","Skunk Flip Sticker","skunk_stickers.gif"],
+    ["FS-114","Turtle Flip Sticker","turtle_sticker.gif"],
+    ["FS-115","Mountain Marker Flip Sticker","usgs_sticker.gif"],
+    ["FS-116","Hangin' Out Flip Sticker","hanginout_sticker.gif"],
+    ["FS-117","Wood-Style Flip Sticker","wood_sticker.gif"]
+];
+
+const magnets = [
+    ["FM-201","Mount Washington Auto Road Magnet","auto_road.gif"],
+    ["FM-202","Bearly Magnet","bearly.gif"],
+    ["FM-203","Covered Bridge Magnet","covered_bridge.gif"],
+    ["FM-204","Diana's Baths Magnet","dianas_baths.gif"],
+    ["FM-205","Life Is Better Magnet","life_is_better.gif"],
+    ["FM-206","Mount Washington Moose Magnet","moose_washington.gif"],
+    ["FM-207","North Conway Magnet","north_conway.gif"],
+    ["FM-208","Summit Bears Magnet","summit_bears.gif"],
+    ["FM-209","Tip-Top House Magnet","tiptop_house.gif"],
+    ["FM-210","Bear Cub Flip Magnet","flip_cub.gif"]
+];
+
+function createGallery(elementId, products){
+    document.getElementById(elementId).innerHTML = products.map(
+        ([code,name,file]) => `
             <div class="gallery-item">
                 <div class="image-container">
                     <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/bear_sticker.gif"
-                        alt="Bear flip sticker design"
+                        src="${imagePath}${file}"
+                        alt="${name}"
                         loading="lazy"
                     >
                 </div>
-            </div>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/bearmouth_sticker.gif"
-                        alt="Bear mouth flip sticker design"
-                        loading="lazy"
-                    >
+                <div class="product-info">
+                    <div class="product-code">${code}</div>
+                    <div class="product-name">${name}</div>
                 </div>
             </div>
+        `
+    ).join("");
+}
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/blueorange_sticker.gif"
-                        alt="Blue and orange flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/carbear_sticker.gif"
-                        alt="Bear in car flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/feedthebear_sticker.gif"
-                        alt="Feed the bear flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/fishingbear_sticker.gif"
-                        alt="Fishing bear flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/foxes_stickers.gif"
-                        alt="Foxes flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/owl_sticker.gif"
-                        alt="Owl flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/plaid_stickers.gif"
-                        alt="Plaid flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/raccoon_sticker.gif"
-                        alt="Raccoon flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/roundfox_sticker.gif"
-                        alt="Round fox flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/say_cheese_sticker.gif"
-                        alt="Say Cheese flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/skunk_stickers.gif"
-                        alt="Skunk flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/turtle_sticker.gif"
-                        alt="Turtle flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/usgs_sticker.gif"
-                        alt="USGS-style flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/hanginout_sticker.gif"
-                        alt="Hangin' Out flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/wood_sticker.gif"
-                        alt="Wood-style flip sticker design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-        </div>
-
-        <h2>
-            3.75&quot; × 3&quot; Fridge 3D & Flip Style Magnet Designs
-        </h2>
-
-        <div class="gallery" id="gallery-scenic">
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/auto_road.gif"
-                        alt="Mount Washington Auto Road magnet design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/bearly.gif"
-                        alt="Bearly magnet design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/covered_bridge.gif"
-                        alt="Covered bridge magnet design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/dianas_baths.gif"
-                        alt="Diana's Baths magnet design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/life_is_better.gif"
-                        alt="Life Is Better magnet design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/moose_washington.gif"
-                        alt="Mount Washington moose magnet design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/north_conway.gif"
-                        alt="North Conway magnet design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/summit_bears.gif"
-                        alt="Summit bears magnet design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/tiptop_house.gif"
-                        alt="Tip-Top House magnet design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img
-                        src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/flip_cub.gif"
-                        alt="Bear cub flip magnet design"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-
-        </div>
-
-        <div class="bottom-home">
-            <a href="/" class="home-button">
-                &larr; Back to Home
-            </a>
-        </div>
-
-        <footer>
-            <p>
-                &copy; 2026 3D Souvenirs, LLC —
-                Eye-catching lenticular products
-            </p>
-        </footer>
-
-    </div>
+createGallery("stickers", stickers);
+createGallery("magnets", magnets);
+</script>
 
 </body>
 </html>
