@@ -1,292 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Souvenirs - Samples Gallery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Souvenirs - Samples Gallery</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2M84R3ZYTQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} 
-      gtag('js', new Date());
-      gtag('config', 'G-2M84R3ZYTQ');
-    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2M84R3ZYTQ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2M84R3ZYTQ');
+</script>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    min-height:100vh;
+    padding:40px 20px;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.container{
+    max-width:1200px;
+    margin:0 auto;
+}
 
-        h1 {
-            text-align: center;
-            color: white;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+.header{
+    text-align:center;
+    margin-bottom:40px;
+}
 
-        h2 {
-            color: white;
-            margin-top: 50px;
-            margin-bottom: 30px;
-            font-size: 1.8em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
+h1{
+    color:#fff;
+    font-size:2.7em;
+    margin-bottom:15px;
+    text-shadow:2px 2px 4px rgba(0,0,0,.3);
+}
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
+.subtitle{
+    color:#fff;
+    font-size:1.15em;
+    margin-bottom:25px;
+    opacity:.95;
+}
 
-        .gallery-item {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
+/* Buttons */
 
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-        }
+.button{
+    display:inline-block;
+    padding:14px 30px;
+    margin:0 8px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:.2s;
+}
 
-        .image-container {
-            width: 100%;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f8f9fa;
-            padding: 15px;
-            min-height: 400px;
-        }
+.home-button{
+    background:#fb6b0b;
+    color:#fff;
+}
 
-        .gallery-item img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            display: block;
-        }
+.home-button:hover{
+    background:#1062ba;
+    transform:translateY(-2px);
+}
 
-        .gallery-item-footer {
-            padding: 15px;
-            text-align: center;
-            background: #f8f9fa;
-            border-top: 1px solid #e0e0e0;
-        }
+.quote-button{
+    background:#fff;
+    color:#1062ba;
+}
 
-        footer {
-            text-align: center;
-            color: white;
-            margin-top: 40px;
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-    </style>
+.quote-button:hover{
+    background:#f2f2f2;
+    transform:translateY(-2px);
+}
+
+/* Gallery */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    padding:20px 0;
+}
+
+.gallery-item{
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 8px 16px rgba(0,0,0,.2);
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+}
+
+.gallery-item:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 24px rgba(0,0,0,.3);
+}
+
+.image-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f8f9fa;
+    min-height:400px;
+    padding:15px;
+}
+
+.gallery-item img{
+    max-width:100%;
+    max-height:100%;
+}
+
+h2{
+    color:#fff;
+    font-size:2em;
+    margin:60px 0 20px;
+    text-shadow:2px 2px 4px rgba(0,0,0,.3);
+}
+
+footer{
+    text-align:center;
+    margin:60px 0 20px;
+    color:#fff;
+}
+
+.bottom-home{
+    margin-top:40px;
+}
+
+@media(max-width:700px){
+
+.button{
+    display:block;
+    margin:10px auto;
+}
+
+.gallery{
+    grid-template-columns:1fr;
+}
+
+.image-container{
+    min-height:300px;
+}
+
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>3" Sticker Designs</h1>
-        
-        <div class="gallery" id="gallery-stickers">
-            <!-- Round sticker designs -->
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/bear_sticker.gif" alt="bear sticker" loading="lazy">
-                </div>
-            </div>
+<div class="container">
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/bearmouth_sticker.gif" alt="bearmouth sticker" loading="lazy">
-                </div>
-            </div>
+<div class="header">
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/blueorange_sticker.gif" alt="blueorange sticker" loading="lazy">
-                </div>
-            </div>
+<h1>3D Souvenirs Sample Gallery</h1>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/carbear_sticker.gif" alt="carbear sticker" loading="lazy">
-                </div>
-            </div>
+<p class="subtitle">
+Explore our collection of custom 3D lenticular magnets, flip stickers and postcards designed for gift shops, attractions and destinations.
+</p>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/feedthebear_sticker.gif" alt="feed the bear sticker" loading="lazy">
-                </div>
-            </div>
+<a href="/" class="button home-button">← Back to Home</a>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/fishingbear_sticker.gif" alt="fishing bear sticker" loading="lazy">
-                </div>
-            </div>
+<a href="/#contact" class="button quote-button">Request a Quote</a>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/foxes_stickers.gif" alt="foxes stickers" loading="lazy">
-                </div>
-            </div>
+</div>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/owl_sticker.gif" alt="owl sticker" loading="lazy">
-                </div>
-            </div>
+<!--
+==================================================
+PASTE YOUR EXISTING GALLERY HERE
+Everything from:
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/plaid_stickers.gif" alt="plaid stickers" loading="lazy">
-                </div>
-            </div>
+<h2>3" Sticker Designs</h2>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/raccoon_sticker.gif" alt="raccoon sticker" loading="lazy">
-                </div>
-            </div>
+through
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/roundfox_sticker.gif" alt="round fox sticker" loading="lazy">
-                </div>
-            </div>
+</footer>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/say_cheese_sticker.gif" alt="say cheese sticker" loading="lazy">
-                </div>
-            </div>
+can remain exactly as it is.
+==================================================
+-->
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/skunk_stickers.gif" alt="skunk stickers" loading="lazy">
-                </div>
-            </div>
+<div class="bottom-home" style="text-align:center;">
+    <a href="/" class="button home-button">← Back to Home</a>
+</div>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/turtle_sticker.gif" alt="turtle sticker" loading="lazy">
-                </div>
-            </div>
+<footer>
+© 2026 3D Souvenirs, LLC • Bringing Memories to Life in 3D
+</footer>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/usgs_sticker.gif" alt="usgs sticker" loading="lazy">
-                </div>
-            </div>
+</div>
 
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/hanginout_sticker.gif" alt="hanginout sticker" loading="lazy">
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/wood_sticker.gif" alt="wood sticker" loading="lazy">
-                </div>
-            </div>
-
-        </div>
-
-       <br><br> <h1>3.75" x 3" Fridge Magnet Designs</h1>
-        <div class="gallery" id="gallery-scenic">
-            <!-- Rectangular scenic designs -->
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/auto_road.gif" alt="auto road" loading="lazy">
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/bearly.gif" alt="bearly" loading="lazy">
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/covered_bridge.gif" alt="covered bridge" loading="lazy">
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/dianas_baths.gif" alt="dianas baths" loading="lazy">
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/life_is_better.gif" alt="life is better" loading="lazy">
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/moose_washington.gif" alt="moose washington" loading="lazy">
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/north_conway.gif" alt="north conway" loading="lazy">
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/summit_bears.gif" alt="summit bears" loading="lazy">
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/tiptop_house.gif" alt="tiptop house" loading="lazy">
-                </div>
-            </div>
-
-                        <div class="gallery-item">
-                <div class="image-container">
-                    <img src="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/flip_cub.gif" alt="flip cub" loading="lazy">
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>&copy; 2026 3D Souvenirs, LLC - Eye-catching lenticular products</p>
-        </footer>
-    </div>
-
-    <!-- Keep script removed; gallery is hard-coded to avoid blob/raw path issues -->
 </body>
 </html>
