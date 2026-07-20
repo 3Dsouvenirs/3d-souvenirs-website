@@ -8,103 +8,45 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2M84R3ZYTQ"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2M84R3ZYTQ');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2M84R3ZYTQ');
 </script>
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #1062ba;
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1062ba;
+}
 
-    .container {
-        max-width: 800px;
-        margin: 60px auto;
-        background: #ffffff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-        text-align: center;
-    }
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    text-align: center;
+}
 
-    img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-    }
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
 
-    p {
-        font-size: 16px;
-        color: #555;
-        line-height: 1.6;
-        margin-bottom: 25px;
-    }
+p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
 
-    /* FORM CONTAINER (NEW BLUE BOX) */
-    .form-wrapper {
-        background-color: #1062ba; /* soft light blue */
-        padding: 25px;
-        border-radius: 10px;
-        margin-top: 20px;
-    }
-
-    form {
-        text-align: left;
-    }
-
-    .form-row {
-        display: flex;
-        gap: 15px;
-        margin-bottom: 15px;
-    }
-
-    .form-row input {
-        flex: 1;
-    }
-
-    input, textarea {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        font-size: 14px;
-        box-sizing: border-box;
-        background: #fff;
-    }
-
-    textarea {
-        resize: vertical;
-    }
-
-    /* LIGHTER BUTTON */
-    button {
-        width: 100%;
-        padding: 14px;
-        background-color: #fb6b0b; 
-        color: white;
-        border: none;
-        border-radius: 6px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background 0.2s ease;
-    }
-
-    button:hover {
-        background-color: #959595;
-    }
-
-    footer {
-        margin-top: 30px;
-        font-size: 14px;
-        color: #777;
-        text-align: center;
-    }
-    .bear-gallery {
+/* Sample Gallery */
+.bear-gallery {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -119,63 +61,157 @@
     margin-bottom: 0;
 }
 
-@media (max-width: 600px) {
+.sample-intro {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: #444;
+}
+
+.sample-button {
+    display: inline-block;
+    margin: 0 0 30px;
+    padding: 14px 30px;
+    background-color: #fb6b0b;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color .2s ease, transform .2s ease;
+}
+
+.sample-button:hover {
+    background-color: #1062ba;
+    transform: translateY(-2px);
+}
+
+/* Form */
+.form-wrapper {
+    background-color: #1062ba;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+form {
+    text-align: left;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row input {
+    flex: 1;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #fb6b0b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+button:hover {
+    background-color: #959595;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+}
+
+/* Mobile */
+@media (max-width:600px) {
+
     .bear-gallery img {
         width: 100%;
     }
-}
 
-    /* MOBILE */
-    @media (max-width: 600px) {
-        .form-row {
-            flex-direction: column;
-        }
+    .form-row {
+        flex-direction: column;
     }
+
+    .sample-button {
+        display:block;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <div class="container">
+
     <img src="3DSouvenirs.png" alt="3D Souvenirs">
+
     <p>
         <strong>3DSouvenirs.com</strong> creates premium custom 3D lenticular souvenirs that help gift shops, attractions, museums, parks, and tourist destinations stand out. We specialize in eye-catching postcards, fridge magnets, flip stickers, and other unique products that bring destinations to life with stunning motion and depth. Every design is custom-created to showcase your location, giving visitors a memorable keepsake they'll be excited to take home.
     </p>
+
     <div class="bear-gallery">
-    <img src="3D-LifeIsBetter.gif" alt="Bear Magnet Sample 1">
-    <img src="3D-DianasBaths.gif" alt="Diana's Baths Magnet Sample 2">
-</div>
+        <img src="3D-LifeIsBetter.gif" alt="Bear Magnet Sample">
+        <img src="3D-DianasBaths.gif" alt="Diana's Baths Magnet Sample">
+    </div>
 
-<p class="sample-intro">
-    Explore more examples of our custom 3D lenticular magnets, postcards, and flip stickers.
-</p>
+    <p class="sample-intro">
+        Explore more examples of our custom 3D lenticular magnets, postcards, and flip stickers.
+    </p>
 
-<a href="/samples/" class="sample-button">
-    View Our Sample Gallery →
-</a>
-</div>
-</br>
+    <a href="/samples/" class="sample-button">
+        View Our Sample Gallery →
+    </a>
+
     <p><strong>Request a quote or ask questions below:</strong></p>
 
     <div class="form-wrapper">
+
         <form target="_blank" action="https://formsubmit.co/info@3dsouvenirs.com" method="POST">
-            
+
             <div class="form-row">
                 <input type="text" name="name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Email Address" required>
             </div>
 
-            <div style="margin-bottom: 15px;">
+            <div style="margin-bottom:15px;">
                 <textarea name="message" rows="6" placeholder="Your Question" required></textarea>
             </div>
 
             <button type="submit">Submit Form</button>
+
         </form>
+
     </div>
 
     <footer>
         © 2026 3DSouvenirs.com
     </footer>
+
 </div>
 
 </body>
