@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Canobie Lake Park — 3D Souvenirs Demo</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#111}
+    body{margin:0;padding:2rem;background:#f7f7fb;display:flex;align-items:center;justify-content:center;min-height:100vh}
+    .card{background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(12,20,40,0.08);max-width:980px;width:100%;padding:24px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:56px;height:56px;background:#eee;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#666;font-weight:700}
+    h1{margin:0;font-size:1.25rem}
+    p.lead{color:#444;margin:8px 0 20px}
+    .mockup{display:flex;flex-direction:column;align-items:center}
+    .mockup img{max-width:100%;height:auto;border-radius:6px;border:1px solid #e6e6ef}
+    .controls{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    a.button{display:inline-block;padding:8px 12px;background:#0b63ff;color:#fff;border-radius:6px;text-decoration:none;font-weight:600}
+    a.ghost{background:transparent;border:1px solid #d7d7e8;color:#222}
+    footer{margin-top:18px;color:#666;font-size:0.9rem}
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <header>
+      <div class="logo">3D</div>
+      <div>
+        <h1>Canobie Lake Park — Client demo</h1>
+        <p class="lead">Mockup preview for Canobie Lake Park. Use this page to show the GIF mockup to the client.</p>
+      </div>
+    </header>
+
+    <section class="mockup" aria-labelledby="mockup-title">
+      <h2 id="mockup-title" style="width:100%;text-align:left;font-size:1rem;margin:18px 0 6px;color:#222">Mockup</h2>
+      <img src="canobie.gif" alt="Canobie Lake Park mockup" />
+
+      <div class="controls">
+        <a class="button" href="canobie.gif" download>Download GIF</a>
+        <a class="ghost" href="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/d8db8389e42e50affbd3e69586a4fbaa7764b74e/samples/canobie.gif" target="_blank" rel="noopener">Open raw</a>
+      </div>
+
+      <footer>
+        Path: <code>samples/canobie.gif</code>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
