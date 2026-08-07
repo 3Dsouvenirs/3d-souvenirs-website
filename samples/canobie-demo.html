@@ -13,11 +13,14 @@
     h1{margin:0;font-size:1.25rem}
     p.lead{color:#444;margin:8px 0 20px}
     .mockup{display:flex;flex-direction:column;align-items:center}
+    .mockup-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:24px;width:100%;margin-top:20px}
+    .mockup-item{display:flex;flex-direction:column;align-items:center}
+    .mockup-item h3{margin:12px 0 8px;font-size:1rem;color:#222}
     .mockup img{max-width:100%;height:auto;border-radius:6px;border:1px solid #e6e6ef}
-    .controls{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    .controls{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
     a.button{display:inline-block;padding:8px 12px;background:#0b63ff;color:#fff;border-radius:6px;text-decoration:none;font-weight:600}
     a.ghost{background:transparent;border:1px solid #d7d7e8;color:#222}
-    footer{margin-top:18px;color:#666;font-size:0.9rem}
+    footer{margin-top:18px;color:#666;font-size:0.9rem;text-align:center}
   </style>
 </head>
 <body>
@@ -26,22 +29,34 @@
       <div class="logo">3D</div>
       <div>
         <h1>Canobie Lake Park — Client demo</h1>
-        <p class="lead">Mockup preview for Canobie Lake Park. Use this page to show the GIF mockup to the client.</p>
+        <p class="lead">Mockup previews for Canobie Lake Park. Use these pages to show the GIF mockups to the client.</p>
       </div>
     </header>
 
     <section class="mockup" aria-labelledby="mockup-title">
-      <h2 id="mockup-title" style="width:100%;text-align:left;font-size:1rem;margin:18px 0 6px;color:#222">Mockup</h2>
-      <img src="canobie.gif" alt="Canobie Lake Park mockup" />
+      <h2 id="mockup-title" style="width:100%;text-align:left;font-size:1rem;margin:18px 0 12px;color:#222">Mockup Designs</h2>
+      
+      <div class="mockup-grid">
+        <div class="mockup-item">
+          <h3>Canobie Lake Park</h3>
+          <img src="canobie.gif" alt="Canobie Lake Park mockup" />
+          <div class="controls">
+            <a class="button" href="canobie.gif" download>Download GIF</a>
+            <a class="ghost" href="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/canobie.gif" target="_blank" rel="noopener">Open raw</a>
+          </div>
+          <footer>Path: <code>samples/canobie.gif</code></footer>
+        </div>
 
-      <div class="controls">
-        <a class="button" href="canobie.gif" download>Download GIF</a>
-        <a class="ghost" href="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/d8db8389e42e50affbd3e69586a4fbaa7764b74e/samples/canobie.gif" target="_blank" rel="noopener">Open raw</a>
+        <div class="mockup-item">
+          <h3>Cannonball Ride</h3>
+          <img src="cannonball.gif" alt="Canobie Lake Park Cannonball ride mockup" />
+          <div class="controls">
+            <a class="button" href="cannonball.gif" download>Download GIF</a>
+            <a class="ghost" href="https://raw.githubusercontent.com/3Dsouvenirs/3d-souvenirs-website/main/samples/cannonball.gif" target="_blank" rel="noopener">Open raw</a>
+          </div>
+          <footer>Path: <code>samples/cannonball.gif</code></footer>
+        </div>
       </div>
-
-      <footer>
-        Path: <code>samples/canobie.gif</code>
-      </footer>
     </section>
   </main>
 </body>
