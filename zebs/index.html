@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zebs — PNG Gallery</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    body{margin:0;padding:2rem;background:#f7f7fb;color:#111}
+    h1{margin:0 0 1rem;font-size:1.25rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+    .card{background:#fff;border-radius:8px;padding:0.5rem;box-shadow:0 1px 3px rgba(16,24,40,0.06);display:flex;flex-direction:column;align-items:center}
+    .card img{max-width:100%;height:auto;border-radius:6px}
+    .caption{margin-top:0.5rem;font-size:0.9rem;color:#333;word-break:break-word;text-align:center}
+    .meta{font-size:0.8rem;color:#666;margin-top:0.25rem}
+    a.button{display:inline-block;margin-top:0.5rem;padding:0.35rem 0.6rem;border-radius:6px;background:#0366d6;color:#fff;text-decoration:none;font-size:0.85rem}
+    footer{margin-top:2rem;color:#666;font-size:0.85rem}
+  </style>
+</head>
+<body>
+  <h1>Zebs — PNG gallery</h1>
+  <p>All PNG files in this directory are shown below.</p>
+
+  <div class="grid" id="gallery"></div>
+
+  <footer>
+    Tip: to add or remove images, edit this file or add/remove PNG files in the same directory.
+  </footer>
+
+  <script>
+    // Edit this array if you add/remove PNGs in this directory.
+    const images = [
+      {file: 'Jackson.png', title: 'Jackson.png'},
+      {file: 'Live%20Free.png', title: 'Live Free.png'},
+      {file: 'Mt.%20Washington.png', title: 'Mt. Washington.png'},
+      {file: 'NoCo.png', title: 'NoCo.png'},
+      {file: 'Zebs.png', title: 'Zebs.png'}
+    ];
+
+    const gallery = document.getElementById('gallery');
+
+    images.forEach(img => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      const image = document.createElement('img');
+      // Use encodeURI for safety and ensure spaces are percent-encoded where needed
+      image.src = encodeURI('./' + img.file);
+      image.alt = img.title;
+
+      const caption = document.createElement('div');
+      caption.className = 'caption';
+      caption.textContent = img.title;
+
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+
+      const link = document.createElement('a');
+      link.className = 'button';
+      // link to the file in the same directory (opens the image file in a new tab)
+      link.href = encodeURI('./' + img.file);
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'Open';
+
+      meta.appendChild(link);
+      card.appendChild(image);
+      card.appendChild(caption);
+      card.appendChild(meta);
+      gallery.appendChild(card);
+    });
+  </script>
+</body>
+</html>
